@@ -1,11 +1,11 @@
 package license
 
-type License struct {
+type Activation struct {
 	Active  bool
 	Context map[string]interface{}
 }
-type Provider func(product, key string) (License, error)
-type Policy func(l License) error
+type Provider func(product, key string) (Activation, error)
+type Policy func(l Activation) error
 
 func EnforceWith(allowed func(scope string) bool, check Provider, policy Policy) func(scope, productid, key string) error {
 	return func(scope, productid, key string) error {

@@ -7,8 +7,8 @@ import (
 	"strings"
 )
 
-func Gumroad(productUrl, key string) (License, error) {
-	lic := License{
+func Gumroad(productUrl, key string) (Activation, error) {
+	lic := Activation{
 		Active: false,
 	}
 	form := url.Values{
@@ -30,7 +30,7 @@ func Gumroad(productUrl, key string) (License, error) {
 		variants = strings.Split(r.Purchase.Variants[1:len(r.Purchase.Variants)-1], ",")
 	}
 
-	return License{
+	return Activation{
 		Active: r.Success && !(r.Purchase.Refunded || r.Purchase.Chargebacked),
 		Context: map[string]interface{}{
 			"variants": variants,
