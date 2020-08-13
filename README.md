@@ -1,27 +1,34 @@
-# Project Title
+# License
 
-Foobar is a Python library for dealing with word pluralization.
+License is a library for enforcing software licenses. Currently supports Gumroad license keys. 
 
 ## Installation
 
 ```bash
-go get <repo url>
+go get github.com/jchenry/license
 ```
 
 ## Usage
 
 ```go
 func main(){
-   fmt.Println("hello")
+
+  fmt.Println(license.EnforceWith(
+   func(scope string) bool {
+      return s == "set-license" || s == "show-license"
+	},
+	license.Gumroad,
+	func (f license.Activation) error{
+      if !f.Active{
+         return fmt.Errorf("software license is not active"
+      }
+   })(c.Command.Name, "<someproductid>", "<somekey>"))
 }
 ```
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-Please make sure to update tests as appropriate.
-
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
 
-courtesey of https://www.makeareadme.com
