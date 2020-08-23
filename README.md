@@ -2,6 +2,8 @@
 
 License is a library for enforcing software licenses. Currently supports Gumroad license keys. 
 
+[![Build Status](https://ci.j5y.xyz/api/badges/jchenry/license/status.svg)](https://ci.j5y.xyz/jchenry/license)
+
 ## Installation
 
 ```bash
