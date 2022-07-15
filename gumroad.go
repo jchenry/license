@@ -44,15 +44,15 @@ type gumroadResponse struct {
 	Uses     int64 `json:"uses"`
 	Purchase struct {
 		id                      string
-		ProductName             string                 `json:"product_name"`
-		CreatedAt               string                 `json:"created_at"`
-		FullName                string                 `json:"full_name"`
-		Variants                string                 `json:"variants"`
-		Refunded                bool                   `json:"refunded"`
-		Chargebacked            bool                   `json:"chargebacked"`
-		SubscriptionCancelledAt string                 `json:"subscription_cancelled_at"`
-		SubscriptionFailedAt    string                 `json:"subscription_failed_at"`
-		CustomFields            map[string]interface{} `json:"custom_fields"`
-		Email                   string                 `json:"email"`
+		ProductName             string        `json:"product_name"`
+		CreatedAt               string        `json:"created_at"`
+		FullName                string        `json:"full_name"`
+		Variants                string        `json:"variants"`
+		Refunded                bool          `json:"refunded"`
+		Chargebacked            bool          `json:"chargebacked"`
+		SubscriptionCancelledAt string        `json:"subscription_cancelled_at"`
+		SubscriptionFailedAt    string        `json:"subscription_failed_at"`
+		CustomFields            []interface{} `json:"custom_fields"`
+		Email                   string        `json:"email"`
 	} `json:"purchase"`
 }
